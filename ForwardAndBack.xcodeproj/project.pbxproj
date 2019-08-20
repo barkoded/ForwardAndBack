@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		B49B13FA230C96FD00FDB0C9 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49B13F9230C96FD00FDB0C9 /* main.swift */; };
+		B49B1403230C972C00FDB0C9 /* MKCFoo.m in Sources */ = {isa = PBXBuildFile; fileRef = B49B1402230C972C00FDB0C9 /* MKCFoo.m */; };
+		B49B1405230C978B00FDB0C9 /* Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49B1404230C978B00FDB0C9 /* Bar.swift */; };
+		B49B1407230C988000FDB0C9 /* Baz.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49B1406230C988000FDB0C9 /* Baz.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +28,11 @@
 /* Begin PBXFileReference section */
 		B49B13F6230C96FD00FDB0C9 /* ForwardAndBack */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ForwardAndBack; sourceTree = BUILT_PRODUCTS_DIR; };
 		B49B13F9230C96FD00FDB0C9 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		B49B1400230C972B00FDB0C9 /* ForwardAndBack-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ForwardAndBack-Bridging-Header.h"; sourceTree = "<group>"; };
+		B49B1401230C972C00FDB0C9 /* MKCFoo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKCFoo.h; sourceTree = "<group>"; };
+		B49B1402230C972C00FDB0C9 /* MKCFoo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MKCFoo.m; sourceTree = "<group>"; };
+		B49B1404230C978B00FDB0C9 /* Bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bar.swift; sourceTree = "<group>"; };
+		B49B1406230C988000FDB0C9 /* Baz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Baz.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +66,11 @@
 			isa = PBXGroup;
 			children = (
 				B49B13F9230C96FD00FDB0C9 /* main.swift */,
+				B49B1400230C972B00FDB0C9 /* ForwardAndBack-Bridging-Header.h */,
+				B49B1401230C972C00FDB0C9 /* MKCFoo.h */,
+				B49B1402230C972C00FDB0C9 /* MKCFoo.m */,
+				B49B1404230C978B00FDB0C9 /* Bar.swift */,
+				B49B1406230C988000FDB0C9 /* Baz.swift */,
 			);
 			path = ForwardAndBack;
 			sourceTree = "<group>";
@@ -94,6 +107,7 @@
 				TargetAttributes = {
 					B49B13F5230C96FD00FDB0C9 = {
 						CreatedOnToolsVersion = 11.0;
+						LastSwiftMigration = 1100;
 					};
 				};
 			};
@@ -120,6 +134,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B49B1403230C972C00FDB0C9 /* MKCFoo.m in Sources */,
+				B49B1407230C988000FDB0C9 /* Baz.swift in Sources */,
+				B49B1405230C978B00FDB0C9 /* Bar.swift in Sources */,
 				B49B13FA230C96FD00FDB0C9 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -243,10 +260,18 @@
 		B49B13FE230C96FD00FDB0C9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KYKW8NMWLK;
 				ENABLE_HARDENED_RUNTIME = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ForwardAndBack/ForwardAndBack-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -254,10 +279,17 @@
 		B49B13FF230C96FD00FDB0C9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KYKW8NMWLK;
 				ENABLE_HARDENED_RUNTIME = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ForwardAndBack/ForwardAndBack-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
